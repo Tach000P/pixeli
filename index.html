@@ -94,7 +94,7 @@
               console.log("Image URL:", data.image_url);
 
               const imgElement = document.createElement("img");
-              imgElement.src = data.image_url;
+              imgElement.src = "http://185.255.133.232" + data.image_url;
               imgElement.alt = prompt.value;
 
               imgElement.onload = function () {

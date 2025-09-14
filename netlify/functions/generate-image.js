@@ -33,7 +33,6 @@ exports.handler = async (event) => {
       };
     }
 
-    // ✅ Используем ВСТРОЕННЫЙ fetch (доступен в Netlify)
     const response = await fetch("http://185.255.133.232:5000/generate", {
       method: "POST",
       headers: {
@@ -47,17 +46,14 @@ exports.handler = async (event) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Парсим JSON ответ
     const data = await response.json();
 
-    // Возвращаем успешный ответ
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify(data),
     };
   } catch (error) {
-    // Обработка ошибок
     console.error("Function error:", error);
 
     return {
