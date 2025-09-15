@@ -33,7 +33,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const response = await fetch("http://185.255.133.232:5000/generate", {
+    const response = await fetch("https://185-255-133-232.sslip.io/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
